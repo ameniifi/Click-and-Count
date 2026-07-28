@@ -64,8 +64,7 @@ def predict_exemplar_mask(predictor, point, bbox=None):
     point_labels = np.asarray([1], dtype=np.int32)
 
     if bbox is not None:
-        # PSeCo improves crowded-object segmentation by augmenting point prompts
-        # with a box. For FSC147 exemplars we can use the annotated exemplar box
+        # For FSC147 exemplars we can use the annotated exemplar box
         # directly as that disambiguating prompt.
         masks, _, _ = predictor.predict(
             point_coords=point_coords,
