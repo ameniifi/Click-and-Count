@@ -8,8 +8,7 @@ This repository contains the training and evaluation code for **ClickCount**, a 
 
 The model takes an image and a set of user clicks (converted into SAM masks) as exemplar prompts and predicts a density map whose sum estimates the object count. An optional text-alignment auxiliary loss encourages visual exemplar embeddings to align with CLIP text embeddings of the object category, improving generalization.
 
-                # SLURM job logs (created at runtime)
-```
+
 
 ## Dataset
 
