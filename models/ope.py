@@ -294,8 +294,6 @@ class IterativeAdaptationModule(nn.Module):
         ])
 
         self.norm = nn.LayerNorm(emb_dim, layer_norm_eps) if norm else nn.Identity()
-        # Keep plain Python references only. The actual modules are registered
-        # once on OPEModule, which keeps the checkpoint state_dict clean.
         object.__setattr__(
             self,
             "_text_cond_refs",

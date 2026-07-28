@@ -4,5 +4,4 @@ weights/
 .env
 venv/
 logs/
-personnal/
 .vscode/

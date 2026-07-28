@@ -1,5 +1,5 @@
 from models.clickcount import build_model
-from utils.coco_data import COCOCountingDataset
+from utils.coco_data import COCOCountingDatasetV2
 from utils.data import FSC147Dataset, collate_fn
 from utils.arg_parser import get_argparser
 from utils.losses import CountL1Loss, ObjectNormalizedL2Loss

@@ -80,9 +80,6 @@ def _make_density_map(points_xy, exemplar_boxes, image_size):
     return dmap.unsqueeze(0)
 
 
-# ---------------------------------------------------------------------------
-# Packed-storage helpers (HDF5 per split instead of one file per sample)
-#
 # Density maps live at:
 #   {counting_dir}/gt_density_map_adaptive_{image_size}_{image_size}_coco/{split}.h5
 #   dataset key = sample_key, value = float32 array (image_size, image_size)
@@ -90,7 +87,6 @@ def _make_density_map(points_xy, exemplar_boxes, image_size):
 # SAM masks live at:
 #   {sam_mask_dir}/{split}.h5
 #   dataset key = sample_key, value = uint8 array (num_objects, image_size, image_size)
-# ---------------------------------------------------------------------------
 
 def _density_h5_dir(counting_dir, image_size):
     return os.path.join(
