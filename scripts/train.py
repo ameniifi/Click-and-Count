@@ -78,7 +78,7 @@ def init_wandb(args, rank):
         return None
 
     try:
-        import wandb
+        import wandb  # type: ignore[import-not-found]
     except ImportError as exc:
         raise ImportError(
             "Weights & Biases logging was requested with --wandb, but wandb is "
@@ -147,7 +147,7 @@ def build_dataset(args, split):
     if args.dataset == 'fsc147':
         return FSC147Dataset(**dataset_kwargs)
     if args.dataset == 'coco':
-        return COCOCountingDataset(
+        return COCOCountingDatasetV2(
             **dataset_kwargs,
             counting_dir=args.coco_counting_dir,
         )

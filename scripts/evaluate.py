@@ -69,7 +69,7 @@ def build_dataset(args, split):
     if args.dataset == 'fsc147':
         return FSC147Dataset(**dataset_kwargs)
     if args.dataset == 'coco':
-        return COCOCountingDataset(
+        return COCOCountingDatasetV2(
             **dataset_kwargs,
             counting_dir=args.coco_counting_dir,
         )
