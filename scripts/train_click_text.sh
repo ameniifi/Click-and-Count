@@ -21,7 +21,7 @@ BACKBONE_CKPT=$HOME
 SAM_MASK_DIR=${DATA_ROOT}/sam_masks_vit_b_512_pointbox
 TEXT_CACHE_DIR=${DATA_ROOT}/text_embeddings
 TEXT_CACHE=${TEXT_CACHE_DIR}/clip_vitb16_fsc147d.pt
-INIT_CKPT=${MODEL_ROOT}/lr_drop_fsc.pt
+
 
 MODEL_NAME=lr_click_text_fsc
 TEXT_ALIGNMENT_WEIGHT=0.1
@@ -76,5 +76,4 @@ srun python -u train.py \
   --sam_mask_dir "${SAM_MASK_DIR}" \
   --text_embedding_path "${TEXT_CACHE}" \
   --text_alignment_weight "${TEXT_ALIGNMENT_WEIGHT}" \
-  --text_alignment_warmup_epochs "${TEXT_ALIGNMENT_WARMUP_EPOCHS}" \
-  --init_checkpoint "${INIT_CKPT}"
+  --text_alignment_warmup_epochs "${TEXT_ALIGNMENT_WARMUP_EPOCHS}" 
