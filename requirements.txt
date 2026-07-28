@@ -1,0 +1,7 @@
+numpy==1.25.2+computecanada
+Pillow==12.2.0
+scipy==1.17.1
+segment_anything==1.0
+torch==2.2.1+computecanada
+torchvision==0.17.1+cu118
+tqdm==4.67.1+computecanada

@@ -1,0 +1,8 @@
+__pycache__/
+weights/
+*.pyc
+.env
+venv/
+logs/
+personnal/
+.vscode/
