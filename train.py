@@ -153,8 +153,7 @@ def build_dataset(args, split):
         )
     raise ValueError(
         f"Unsupported dataset: {args.dataset}. Note: this copy of train.py does "
-        "not implement 'coco_v2' — merge --click_only into your v2 train.py if "
-        "that dataset class exists elsewhere in your codebase."
+        "not implement 'coco_v2' — merge --click_only into your v2 train.py"
     )
 
 
