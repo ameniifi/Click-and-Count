@@ -1,7 +1,7 @@
-# Python 3.11. Install a PyTorch/torchvision wheel matching your accelerator.
+# Python 3.10. Install a PyTorch/torchvision wheel matching your accelerator.
 numpy==1.25.2
 Pillow==12.2.0
-scipy==1.17.1
+scipy==1.15.3
 torch==2.2.1
 torchvision==0.17.1
 tqdm==4.67.1
