@@ -35,10 +35,10 @@ The FSC-147 experiments use three exemplars per image. `--click_only` withholds 
 
 ## Environment
 
-The supplied pins target **Python 3.11**, PyTorch 2.2.1, and torchvision 0.17.1. Training and evaluation require a CUDA-capable PyTorch build with NCCL. Install a PyTorch/torchvision build matching your CUDA setup first; for CUDA 11.8, for example:
+The supplied pins target **Python 3.10**, PyTorch 2.2.1, and torchvision 0.17.1. Training and evaluation require a CUDA-capable PyTorch build with NCCL. Install a PyTorch/torchvision build matching your CUDA setup first; for CUDA 11.8, for example:
 
 ```bash
-python3.11 -m venv .venv
+python3.10 -m venv .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip
 python -m pip install torch==2.2.1 torchvision==0.17.1 --index-url https://download.pytorch.org/whl/cu118
