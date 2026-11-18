@@ -8,16 +8,16 @@
 #SBATCH --gres=gpu:1
 #SBATCH --mem=64G
 #SBATCH --time=04:00:00
-#SBATCH --output=$HOME
-#SBATCH --error=$HOME
+#SBATCH --output=/home/<username>/projects/def-<account>/<username>/ClickCount-click-sam/logs/%x-%j.out
+#SBATCH --error=/home/<username>/projects/def-<account>/<username>/ClickCount-click-sam/logs/%x-%j.err
 
 set -euo pipefail
 
-PROJECT_ROOT=$HOME
-COUNTING_DIR=$HOME
-MODEL_ROOT=$HOME
-VENV_PATH=$HOME
-BACKBONE_CKPT=$HOME
+PROJECT_ROOT=/home/<username>/projects/def-<account>/<username>/ClickCount-click-sam
+COUNTING_DIR=/home/<username>/projects/def-<account>/<username>/coco_counting
+MODEL_ROOT=/home/<username>/projects/def-<account>/<username>/clickcount_models
+VENV_PATH=/home/<username>/projects/def-<account>/<username>/venvs/clickcount-click-sam/bin/activate
+BACKBONE_CKPT=/home/<username>/projects/def-<account>/<username>/weights/swav_800ep_pretrain.pth.tar
 SAM_MASK_DIR=${COUNTING_DIR}/sam_masks_vit_b_512_pointbox
 TEXT_CACHE_DIR=${COUNTING_DIR}/text_embeddings
 TEXT_CACHE=${TEXT_CACHE_DIR}/clip_vitb16_coco.pt

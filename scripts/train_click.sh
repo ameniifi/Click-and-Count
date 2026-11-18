@@ -8,16 +8,16 @@
 #SBATCH --gres=gpu:2
 #SBATCH --mem=128G
 #SBATCH --time=1-12:00:00
-#SBATCH --output=$HOME
-#SBATCH --error=$HOME
+#SBATCH --output=/home/<username>/projects/def-<account>/<username>/ClickCount-click-sam/logs/%x-%j.out
+#SBATCH --error=/home/<username>/projects/def-<account>/<username>/ClickCount-click-sam/logs/%x-%j.err
 
 set -euo pipefail
 
-PROJECT_ROOT=$HOME
-DATA_ROOT=$HOME
-MODEL_ROOT=$HOME
-VENV_PATH=$HOME
-BACKBONE_CKPT=$HOME
+PROJECT_ROOT=/home/<username>/projects/def-<account>/<username>/ClickCount-click-sam
+DATA_ROOT=/home/<username>/projects/def-<account>/<username>/MultimodalCounting-SAMVersion/MultimodalCounting-SAMVersion/data/FSC147
+MODEL_ROOT=/home/<username>/projects/def-<account>/<username>/clickcount_models
+VENV_PATH=/home/<username>/projects/def-<account>/<username>/venvs/clickcount-click-sam/bin/activate
+BACKBONE_CKPT=/home/<username>/projects/def-<account>/<username>/weights/swav_800ep_pretrain.pth.tar
 SAM_MASK_DIR=${DATA_ROOT}/sam_masks_vit_b_512_pointbox
 
 MODEL_NAME=lr_click_only_fsc

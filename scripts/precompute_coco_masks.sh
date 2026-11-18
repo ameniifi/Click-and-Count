@@ -8,15 +8,15 @@
 #SBATCH --gres=gpu:1
 #SBATCH --mem=32G
 #SBATCH --time=12:00:00
-#SBATCH --output=$HOME
-#SBATCH --error=$HOME
+#SBATCH --output=/home/<username>/projects/def-<account>/<username>/ClickCount-click-sam/logs/%x-%j.out
+#SBATCH --error=/home/<username>/projects/def-<account>/<username>/ClickCount-click-sam/logs/%x-%j.err
 
 set -euo pipefail
 
-PROJECT_ROOT=$HOME
-COUNTING_DIR=$HOME
-VENV_PATH=$HOME
-SAM_CKPT=$HOME
+PROJECT_ROOT=/home/<username>/projects/def-<account>/<username>/ClickCount-click-sam
+COUNTING_DIR=/home/<username>/projects/def-<account>/<username>/coco_counting_v2
+VENV_PATH=/home/<username>/projects/def-<account>/<username>/venvs/clickcount-click-sam/bin/activate
+SAM_CKPT=/home/<username>/projects/def-<account>/<username>/weights/sam_vit_b_01ec64.pth
 SAM_MASK_DIR=${COUNTING_DIR}/sam_masks_vit_b_512_pointbox
 
 mkdir -p "${PROJECT_ROOT}/logs" "${SAM_MASK_DIR}"

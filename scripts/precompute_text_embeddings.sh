@@ -8,17 +8,17 @@
 #SBATCH --gres=gpu:1
 #SBATCH --mem=32G
 #SBATCH --time=08:00:00
-#SBATCH --output=$HOME
-#SBATCH --error=$HOME
+#SBATCH --output=/home/<username>/projects/def-<account>/<username>/ClickCount-click-sam/logs/%x-%j.out
+#SBATCH --error=/home/<username>/projects/def-<account>/<username>/ClickCount-click-sam/logs/%x-%j.err
 
 set -euo pipefail
 
-PROJECT_ROOT=$HOME
-DATA_ROOT=$HOME
+PROJECT_ROOT=/home/<username>/projects/def-<account>/<username>/ClickCount-click-sam
+DATA_ROOT=/home/<username>/projects/def-<account>/<username>/MultimodalCounting-SAMVersion/MultimodalCounting-SAMVersion/data/FSC147
 TEXT_JSON=${DATA_ROOT}/FSC-147-D.json
 TEXT_CACHE_DIR=${DATA_ROOT}/text_embeddings
 TEXT_CACHE=${TEXT_CACHE_DIR}/clip_vitb16_fsc147d.pt
-VENV_PATH=$HOME
+VENV_PATH=/home/<username>/projects/def-<account>/<username>/venvs/clickcount-click-sam/bin/activate
 
 mkdir -p "${PROJECT_ROOT}/logs" "${TEXT_CACHE_DIR}"
 

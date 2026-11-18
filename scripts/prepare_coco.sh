@@ -7,14 +7,14 @@
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=32G
 #SBATCH --time=08:00:00
-#SBATCH --output=$HOME
-#SBATCH --error=$HOME
+#SBATCH --output=/home/<username>/projects/def-<account>/<username>/ClickCount-click-sam/logs/%x-%j.out
+#SBATCH --error=/home/<username>/projects/def-<account>/<username>/ClickCount-click-sam/logs/%x-%j.err
 
 set -euo pipefail
 
-PROJECT_ROOT=$HOME
-COUNTING_DIR=$HOME
-VENV_PATH=$HOME
+PROJECT_ROOT=/home/<username>/projects/def-<account>/<username>/ClickCount-click-sam
+COUNTING_DIR=/home/<username>/projects/def-<account>/<username>/coco_counting_v2
+VENV_PATH=/home/<username>/projects/def-<account>/<username>/venvs/clickcount-click-sam/bin/activate
 
 mkdir -p "${PROJECT_ROOT}/logs" "${COUNTING_DIR}"
 
