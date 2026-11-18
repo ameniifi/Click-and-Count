@@ -44,7 +44,7 @@ export TORCH_NCCL_BLOCKING_WAIT=1
 
 cd "${PROJECT_ROOT}"
 
-srun python -u train.py \
+srun python -u scripts/train.py \
   --model_name "${MODEL_NAME}" \
   --dataset fsc147 \
   --data_path "${DATA_ROOT}" \
@@ -77,3 +77,4 @@ srun python -u train.py \
   --text_embedding_path "${TEXT_CACHE}" \
   --text_alignment_weight "${TEXT_ALIGNMENT_WEIGHT}" \
   --text_alignment_warmup_epochs "${TEXT_ALIGNMENT_WARMUP_EPOCHS}" 
+
