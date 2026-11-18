@@ -39,7 +39,7 @@ export TORCH_NCCL_BLOCKING_WAIT=1
 
 cd "${PROJECT_ROOT}"
 
-srun python -u train.py \
+srun python -u scripts/train.py \
   --model_name "${MODEL_NAME}" \
   --dataset fsc147 \
   --data_path "${DATA_ROOT}" \
@@ -69,3 +69,4 @@ srun python -u train.py \
   --prompt_type click_sam \
   --click_only \
   --sam_mask_dir "${SAM_MASK_DIR}"
+
