@@ -40,7 +40,7 @@ export TORCH_NCCL_BLOCKING_WAIT=1
 
 cd "${PROJECT_ROOT}"
 
-srun python -u evaluate.py \
+srun python -u scripts/evaluate.py \
   --model_name "${MODEL_NAME}" \
   --data_path "${DATA_ROOT}" \
   --model_path "${MODEL_ROOT}" \
@@ -63,3 +63,4 @@ srun python -u evaluate.py \
   --click_only \
   --sam_mask_dir "${SAM_MASK_DIR}" \
   --text_embedding_path "${TEXT_CACHE}"
+
