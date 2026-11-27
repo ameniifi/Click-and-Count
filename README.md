@@ -116,6 +116,7 @@ torchrun --standalone --nnodes=1 --nproc_per_node=2 -m scripts.train \
   --reduction 8 \
   --image_size 512 \
   --num_objects 3 \
+  --lr_drop 120 \
   --prompt_type click_sam \
   --click_only \
   --sam_mask_dir <data_root>/sam_masks_vit_b_512_pointbox \
