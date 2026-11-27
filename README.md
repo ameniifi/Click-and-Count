@@ -24,7 +24,14 @@ Amani Aifi, Wassim Bouachir, Ahmed Zgaren, and Nizar Bouguila, “Click and Coun
 3. The mask provides shape and appearance cues for visual prototypes. Optional CLIP text embeddings provide category-level guidance during prototype refinement.
 4. Prototype matching and a density-map head produce the predicted count.
 
-The FSC-147 experiments use three exemplars per image. `--click_only` withholds the annotated boxes from the counting model; if boxes are available, they can still be used as SAM disambiguation prompts when masks are precomputed.
+The FSC-147 experiments use three exemplars per image. With
+`--click_only`, the counting model receives no bounding boxes during
+training, validation, testing, or inference; its inputs are the image,
+click points, SAM masks, and (optionally) text embeddings. The cached
+masks used by the provided scripts (`sam_masks_*_pointbox`) were
+generated offline by prompting SAM with each click and its annotated
+box, and the reported validation/test results use these masks. FSC-147
+has no human clicks; each click is the center of the exemplar box.
 
 ## Repository layout
 
